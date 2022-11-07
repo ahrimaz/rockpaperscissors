@@ -1,26 +1,4 @@
 // makes comparisons between computer and player
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let contest = playRound(playerSelection, computerSelection);
-        if (contest === "win") {
-            playerScore++;
-            alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
-        }
-        else if (contest === "tie") {
-            console.log("same option picked, tie");
-        }
-        else if (contest === "lose") {
-            computerScore++;
-            alert("Computer wins this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
-        }
-    }
-    if (computerScore === 5) {
-        alert("Game over, you lose.");
-    } else if (playerScore === 5) {
-        alert("Game over, you win.");
-    }
-}
-
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("TIE","player chose",playerSelection)
@@ -76,6 +54,30 @@ function getPlayerSelection(playerSelection) {
 
 let playerScore = 0
 let computerScore = 0
+
+function game() {
+    let contest = playRound(playerSelection, computerSelection);
+    for (let i = 0; i < 5; i++) {
+    if (contest === "win") {
+        playerScore++;
+           alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
+    }
+    else if (contest === "tie") {
+        console.log("same option picked, tie");
+    } 
+    else if (contest === "lose") {
+        computerScore++;
+        alert("Computer wins this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
+    }
+
+    if (computerScore === 5) {
+        alert("Game over, you lose.");
+    } else if (playerScore === 5) {
+        alert("Game over, you win.");
+    }
+}
+}
+
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerChoice();
 
