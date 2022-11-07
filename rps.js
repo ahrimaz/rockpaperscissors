@@ -5,7 +5,6 @@ function game() {
         if (contest === "win") {
             playerScore++;
             alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
-            i++;
         }
         else if (contest === "tie") {
             console.log("same option picked, tie");
@@ -13,7 +12,6 @@ function game() {
         else if (contest === "lose") {
             computerScore++;
             alert("Computer wins this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
-        i++;
         }
     }
     if (computerScore === 5) {
