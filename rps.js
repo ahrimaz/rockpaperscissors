@@ -1,16 +1,55 @@
 // makes comparisons between computer and player
+function game() {
+    let contest = playRound(playerSelection, computerSelection);
+    for (let i = 0; i < 5; i++) {
+        if (contest === "win") {
+            playerScore++;
+            alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
+            i++;
+        }
+        else if (contest === "tie") {
+            console.log("same option picked, tie");
+        }
+        else if (contest === "lose") {
+            computerScore++;
+            alert("Computer wins this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
+        i++;
+        }
+    }
+    if (computerScore === 5) {
+        alert("Game over, you lose.");
+    } else if (playerScore === 5) {
+        alert("Game over, you win.");
+    }
+}
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("TIE","player chose",playerSelection)
     }
-    else if (computerSelection === "ROCK") {
+    else if (computerSelection === "ROCK" && playerSelection === "SCISSORS") {
         console.log("COMPUTER CHOSE ROCK","player chose ",playerSelection);
+        return "lose";
     }
-    else if (computerSelection === "SCISSORS") {
-        console.log("COMPUTER CHOSE PAPER","player chose",playerSelection);
-    }
-    else if (computerSelection === "PAPER") {
+    else if (computerSelection === "SCISSORS" && playerSelection === "PAPER") {
         console.log("COMPUTER CHOSE SCISSORS","player chose",playerSelection);
+        return "lose";
+    }
+    else if (computerSelection === "PAPER" && playerSelection == "ROCK") {
+        console.log("COMPUTER CHOSE PAPER","player chose",playerSelection);
+        return "lose";
+    }
+    else if (computerSelection === "ROCK" && playerSelection === "PAPER") {
+        console.log("COMPUTER CHOSE ROCK","player chose",playerSelection);
+        return "win";
+    }
+    else if (computerSelection === "SCISSORS" && playerSelection === "ROCK") {
+        console.log("COMPUTER CHOSE SCISSORS","player chose",playerSelection);
+        return "win";
+    }
+    else if (computerSelection === "PAPER" && playerSelection === "SCISSORS") {
+        console.log("COMPUTER CHOSE PAPER","player chose",playerSelection);
+        return "win";
     }
 }
 
@@ -37,7 +76,8 @@ function getPlayerSelection(playerSelection) {
     return getPlayerSelection;
 }
 
-
+let playerScore = 0
+let computerScore = 0
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
