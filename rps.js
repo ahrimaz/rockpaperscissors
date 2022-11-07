@@ -26,6 +26,7 @@ function game() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("TIE","player chose",playerSelection)
+        return "tie";
     }
     else if (computerSelection === "ROCK" && playerSelection === "SCISSORS") {
         console.log("COMPUTER CHOSE ROCK","player chose ",playerSelection);
