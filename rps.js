@@ -1,3 +1,4 @@
+// makes comparisons between computer and player
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("TIE","player chose",playerSelection)
@@ -13,6 +14,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// generates the computer's choice at random
 function getComputerChoice(computerSelection) {
     let getComputerChoice = Math.floor(Math.random() * 3);
     if (getComputerChoice === 0) {
@@ -25,6 +27,7 @@ function getComputerChoice(computerSelection) {
     console.log(getComputerChoice);
 }
 
+// gets the player's choice and normalizes it
 function getPlayerSelection(playerSelection) {
     let getPlayerSelection = prompt("please make a choice").toUpperCase();
     console.log(getPlayerSelection);
