@@ -1,7 +1,15 @@
 function playRound(playerSelection, computerSelection) {
-    // code goes here
+   if playerSelection === "rock" {
+    console.log("win");
+   }
+   
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playeRound(playerSelection, computerSelection))
+function game() {
+
+}
+
+const playerSelection = prompt("Please enter rock, paper, or scissors.");
+const computerSelection = getComputerChoice(); {
+}
+console.log(playRound(playerSelection, computerSelection));
