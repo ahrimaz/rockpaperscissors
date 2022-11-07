@@ -1,7 +1,7 @@
 // makes comparisons between computer and player
 function game() {
-    let contest = playRound(playerSelection, computerSelection);
     for (let i = 0; i < 5; i++) {
+        let contest = playRound(playerSelection, computerSelection);
         if (contest === "win") {
             playerScore++;
             alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
@@ -71,7 +71,6 @@ function getComputerChoice(computerSelection) {
 // gets the player's choice
 function getPlayerSelection(playerSelection) {
     let getPlayerSelection = prompt("please make a choice").toUpperCase();
-    console.log(getPlayerSelection);
     return getPlayerSelection;
 }
 
@@ -79,5 +78,5 @@ let playerScore = 0
 let computerScore = 0
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
 
+game()
