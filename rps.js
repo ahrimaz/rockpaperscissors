@@ -58,7 +58,7 @@ let computerScore = 0
 // plays the game in 5 rounds
 function game() {
     for (let i = 0; i < 5; i++) {
-    let contest = playRound(playerSelection, computerSelection);
+        let contest = playRound(getPlayerSelection(), getComputerChoice());
         if (contest === "win") {
             playerScore++;
             alert("You've won this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
@@ -70,7 +70,6 @@ function game() {
             computerScore++;
             alert("Computer wins this round. You have " + playerScore + " points. Opponent has " + computerScore + " points.");
         }
-
         if (computerScore === 5) {
             alert("Game over, you lose.");
         } else if (playerScore === 5) {
@@ -78,8 +77,5 @@ function game() {
         }
     }
 }
-
-const playerSelection = getPlayerSelection();
-const computerSelection = getComputerChoice();
 
 game()
