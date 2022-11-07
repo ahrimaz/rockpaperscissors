@@ -17,17 +17,20 @@ function playRound(playerSelection, computerSelection) {
 // generates the computer's choice at random
 function getComputerChoice(computerSelection) {
     let getComputerChoice = Math.floor(Math.random() * 3);
-    if (getComputerChoice === 0) {
-        return "ROCK";
-    } else if (getComputerChoice === 1) {
-        return "SCISSORS";
-    } else if (getComputerChoice === 2) {
-        return "PAPER";
+    switch(getComputerChoice) {
+        case 0:
+            return "ROCK";
+            break;
+        case 1:
+            return "SCISSORS";
+            break;
+        case 2:
+            return "PAPER";
+            break;
     }
-    console.log(getComputerChoice);
 }
 
-// gets the player's choice and normalizes it
+// gets the player's choice
 function getPlayerSelection(playerSelection) {
     let getPlayerSelection = prompt("please make a choice").toUpperCase();
     console.log(getPlayerSelection);
